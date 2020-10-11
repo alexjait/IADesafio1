@@ -1,0 +1,4 @@
+FakeNews01: Exploración
+FakeNews02: Modelos clásicos
+FakeNews03: Red neuronal inicial (sin limpieza de datos)
+FakeNews04: Red neuronal con limpieza de datos
