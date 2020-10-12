@@ -36,6 +36,13 @@ import pandas as pd
 import re,string,unicodedata
 import seaborn as sns
 import tensorflow as tf
+from sklearn import preprocessing
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+from keras import optimizers
+import itertools
+from sklearn.model_selection import KFold
+from keras.layers import Flatten
 
 #Todo en lower
 def to_lower(texto):
