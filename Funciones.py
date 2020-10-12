@@ -5,7 +5,7 @@ from keras.layers import Dense,Embedding,LSTM,Dropout
 from keras.models import Sequential
 from keras.preprocessing import text, sequence
 from nltk import pos_tag
-from nltk.corpus import stopwords 
+from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
@@ -59,8 +59,8 @@ def remove_urls(text):
 def remove_stopwords(text):
     stop = set(stopwords.words('english'))
     punctuation = list(string.punctuation)
-    stop.update(punctuation)    
-    
+    stop.update(punctuation)
+
     final_text = []
     for i in text.split():
         if i.strip().lower() not in stop:
@@ -77,15 +77,15 @@ def denoise_text(text):
     return text
 
 def agregarResultado(resultados, modelo, train_acc, test_acc):
-    resultados_dict = { 
-        'Modelo': modelo, 
+    resultados_dict = {
+        'Modelo': modelo,
         'Set': 'Train',
         'Accuracy': train_acc}
     df_temp = pd.DataFrame([resultados_dict], columns=resultados_dict.keys())
     resultados = pd.concat([resultados, df_temp], axis=0)
 
-    resultados_dict = { 
-        'Modelo': modelo, 
+    resultados_dict = {
+        'Modelo': modelo,
         'Set': 'Test',
         'Accuracy': test_acc}
     df_temp = pd.DataFrame([resultados_dict], columns=resultados_dict.keys())
@@ -94,33 +94,33 @@ def agregarResultado(resultados, modelo, train_acc, test_acc):
 
 def ejecutarModelo1(nombre_modelo, grid, vectorizer, train, test, y_train, y_test, resultados, tfidfTransformer=None):
     X_train = vectorizer.fit_transform(train)
-    
+
     if tfidfTransformer is None:
         grid.fit(X_train, y_train)
     else:
         grid.fit(tfidfTransformer.fit_transform(X_train), y_train)
-        
+
     print("Best cross-validation score: {:.4f}".format(grid.best_score_));
     print("Best parameters: ", grid.best_params_);
     X_test = vectorizer.transform(test);
     model = grid.best_estimator_;
     y_pred_train = model.predict(X_train);
-    y_pred_test = model.predict(X_test);  
+    y_pred_test = model.predict(X_test);
     return agregarResultado(
         resultados,
-        nombre_modelo, 
+        nombre_modelo,
         accuracy_score(y_train, y_pred_train),
-        accuracy_score(y_test, y_pred_test))    
+        accuracy_score(y_test, y_pred_test))
 
 def ejecutarModelo2(nombre_modelo, model, vectorizer, X_train, X_test, y_train, y_test, resultados):
-    model.fit(X_train, y_train)    
-    
+    model.fit(X_train, y_train)
+
     return agregarResultado(
                 resultados,
-                nombre_modelo, 
+                nombre_modelo,
                 model.score(X_train, y_train),
                 model.score(X_test, y_test)), pd.DataFrame({
-                'atributo': vectorizer.get_feature_names(), 
+                'atributo': vectorizer.get_feature_names(),
                 'importancia': model.feature_importances_}).sort_values('importancia', ascending = False).head(10)  
 
 def graficoBalanceado(df):
@@ -134,7 +134,9 @@ def graficoBalanceado(df):
 def graficarPie(x, labels, autopct, nombre_archivo):
     pie, ax = plt.subplots(figsize=[8,8])
     labels = labels
-    plt.pie(x=x, 
+    plt.pie(x=x,
             autopct=autopct, labels=labels);
     pie.savefig(nombre_archivo)
-    
+
+def removeDuplicates(df, cols = ["text", "fake?"]):
+    return df.drop_duplicates(cols)
