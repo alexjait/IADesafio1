@@ -123,7 +123,7 @@ def ejecutarModelo2(nombre_modelo, model, vectorizer, X_train, X_test, y_train, 
                 'atributo': vectorizer.get_feature_names(), 
                 'importancia': model.feature_importances_}).sort_values('importancia', ascending = False).head(10)  
 
-def graficoBalanceado():
+def graficoBalanceado(df):
     plt.figure(figsize=(8, 8))
     sns.set(style="darkgrid")
     ax = sns.countplot(x="label", data=df)
