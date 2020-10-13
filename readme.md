@@ -27,7 +27,7 @@ El desarrollo de este trabajo se ha realizado utilizando jupyter notebooks con e
 
 Por otro lado, se los archivos referentes a la exposición realizada están dispuestos como sigue:
 
-* [Clasificación de Fake News](Clasificación de Fake News.pdf): contiene los slides
+* [Clasificacion de Fake News](Clasificación%20de%20Fake%20News.pdf): contiene los slides
 * [Graficos](./Graficos): contiene los gráficos obtenidos de las notebooks, incluyendo los que están en los slides
 
 ## Conclusiones
