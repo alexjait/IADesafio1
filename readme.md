@@ -21,7 +21,9 @@ El desarrollo de este trabajo se ha realizado utilizando jupyter notebooks con e
 * [4_Red_Neuronal_Fully_Connected](4_Red_Neuronal_Fully_Connected.ipynb)
 * [5_Red_Neuronal_Fully_Connected_con_Limpieza](5_Red_Neuronal_Fully_Connected_con_Limpieza.ipynb)
 * [6_Redes_recurrentes](6_Redes_recurrentes.ipynb)
-* [7_Red_Clean_Subject_GridSearch](7_Red_Clean_Subject_GridSearch.ipynb)
+* [07_Red_Base_Subject](6_Redes_recurrentes)
+* [08_Red_Clean_Subject](08_Red_Clean_Subject.ipynb)
+* [09_Red_Clean_Subject_GridSearch](09_Red_Clean_Subject_GridSearch.ipynb)
 
 Por otro lado, se los archivos referentes a la exposición realizada están dispuestos como sigue:
 
