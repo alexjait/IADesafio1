@@ -32,7 +32,7 @@ Por otro lado, se los archivos referentes a la exposición realizada están disp
 
 ## Conclusiones
 
-Hemos entrenado una red neuronal fully conected y comparado su performance con algoritmos varios de machine learning mas tradicionales como la regresión logística, los arboles de decisión y ensambles de arboles. En este proceso hemos obtenido una exactitud de ```.995``` eliminando palabras tendenciosas de las cuales nos percatamos explorando y analizando los datos. En este sentido, el machine learning es una herramienta factible para ayudar a combatir el esparcimiento de fake news. Sin embargo, creemos necesaria una recolección de datos mas transparente para evitar sesgos en los algoritmos que resulten en el entrenamiento con los mismos.
+Hemos entrenado una red neuronal fully conected y comparado su performance con algoritmos varios de machine learning mas tradicionales como la regresión logística, los arboles de decisión y ensambles de arboles. En este proceso hemos obtenido una exactitud de ```.995``` eliminando palabras tendenciosas de las cuales nos percatamos explorando y analizando los datos. En este sentido, el machine learning es una herramienta factible para ayudar a combatir el esparcimiento de fake news. Sin embargo, creemos necesaria una recolección de datos mas transparente para evitar sesgos en los algoritmos resultantes.
 
 ## Referencias
 
